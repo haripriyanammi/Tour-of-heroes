@@ -1,13 +1,31 @@
 import { Component } from '@angular/core';
-import { MessagesComponent } from './messages/messages.component';  // Import MessagesComponent
-import { HeroesComponent } from './heroes/heroes.component';      // Import HeroesComponent
+import { AppRoutingModule } from './app-routing.module';  // Import the routing module
+//import { HeroesComponent } from './heroes/heroes.component';
+//import { DashboardComponent } from './dashboard/dashboard.component';
+//import { HeroDetailComponent } from './hero-detail/hero-detail.component';
+import { MessagesComponent } from './messages/messages.component';  // Messages component
 
 @Component({
-  standalone: true,     // Declare AppComponent as standalone
   selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css'],
-  imports: [HeroesComponent, MessagesComponent], // Add the components to imports array
+  standalone: true,  // Marking as standalone
+  imports: [
+    AppRoutingModule,  // Import the routing module here to use router
+    //HeroesComponent,
+    //DashboardComponent,
+    //HeroDetailComponent,
+    MessagesComponent
+  ],
+  template: `
+    <div>
+      <h1>Tour of Heroes</h1>
+      <nav>
+        <a routerLink="/dashboard">Dashboard</a>
+        <a routerLink="/heroes">Heroes</a>
+      </nav>
+      <router-outlet></router-outlet>  <!-- Where routed components will be displayed -->
+    </div>
+  `,
+  styleUrls: ['./app.component.css']
 })
 export class AppComponent {
   title = 'Tour of Heroes';
