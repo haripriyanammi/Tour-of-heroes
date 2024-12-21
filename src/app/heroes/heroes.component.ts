@@ -4,7 +4,7 @@ import { Hero } from '../hero';
 import { HeroService } from '../hero.service';
 import { CommonModule } from '@angular/common';  // Import CommonModule for ngIf, ngFor, etc.
 import { RouterModule } from '@angular/router';  // Import RouterModule for routing
-
+//import { CommonModule } from '@angular/common';
 @Component({
   selector: 'app-heroes',
   templateUrl: './heroes.component.html',
